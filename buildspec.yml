@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+    #Si utiliza la imagen estándar de Ubuntu 2.0 o posterior, debe especificar las versiones del tiempo de ejecución.
+    #Si especifica las versiones del tiempo de ejecución y utiliza una imagen que no sea la estándar de Ubuntu 2.0, se produce un error en la compilación.
+    #runtime-versions:
+      # name: version
+      # name: version
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+      - java -version
+      - gradle build
+      # - command
+  #post_build:
+    #commands:
+      # - command
+      # - command
+artifacts:
+  type: zip
+  files:
+    - 'build/libs/*.jar'
+    - 'Procfile'
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths

@@ -1,0 +1,1 @@
+web: java -jar build/libs/services.jar --server.port=5000
